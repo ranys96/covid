@@ -1,0 +1,27 @@
+                         DETECTANDO EL COVID-19 CON IMAGENES DE RAYOS X
+1.-Introducción.
+
+Se entreno un modelo de clasificación binaria que diferenciase entre pacientes sanos 
+o con otras patologías (neumonías) y aquellos afectados por el COVID-19.
+Ese modelo ha sido entrenado con muchas imágenes de cada tipo y ha conseguido una precisión muy 
+elevada en sólo un tiempo de entrenamiento.
+
+2.-Objetivo general
+
+Entrenar un clasificador de imagenes para identificar si una persona tiene COVID-19 o no usando
+radiograficas.
+
+3.-Descripción de la topologia de la red neuronal.
+
+Este proyecto es una red neuronal de tipo clasificacion donde estara dividido por 2 enfermedades VOVID-19, PNEUMONIA 
+o si la persona no tiene Covid.
+Se uso la arquitectura de Resnet3, lo que se esta haciendo es crear un objeto llamado learn de tipo cnn_learner (una red convolucional),
+ se le esta pasando el objeto data, se le dice que use el modelo pre-entrenado resnet34 y que use la métrica error_rate con el dataset de validación
+Se uso el método llamado fit_one_cycle (paper). El valor que se le esta pasando es la cantidad de épocas que deseamos que entrenar.
+Para ver los resultados de mejor manera fastai nos lo facilita. Para esto, creamos un objeto de tipo ClassificationInterpretation de nuestro objeto learn.
+Una de las cosas más utiles de es llamado plot_top_losses que nos indica que tan buena fue nuestra predicción.
+
+4.-Conclusiones
+
+Con la ayuda de google colab se puedo entrenar un detector de COVID-19 
+automatico en un conjunto de imagenes rayos x.
